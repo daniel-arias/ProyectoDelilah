@@ -1,0 +1,690 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "DelilahResto",
+    "contact": {}
+  },
+  "host": "localhost:3500",
+  "basePath": "/api",
+  "securityDefinitions": {},
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/login": {
+      "post": {
+        "summary": "Login",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "Login",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/LoginRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/usuarios/": {
+      "get": {
+        "summary": "Get Usuarios",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "GetUsuarios",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "UserId",
+            "in": "path",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "The user ID"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete User",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "DeleteUser",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "UserId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "The user ID"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/usuarios": {
+      "post": {
+        "summary": "Insert User",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "InsertUser",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/InsertUserRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/productos/": {
+      "get": {
+        "summary": "Get Products",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "GetProducts",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "ProductId",
+            "in": "path",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "The product ID"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "put": {
+        "summary": "Put Producto",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "PutProducto",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/PutProductoRequest"
+            }
+          },
+          {
+            "name": "ProductId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "The product ID"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete Product",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "DeleteProduct",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "ProductId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "The product ID"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/productos": {
+      "post": {
+        "summary": "Post Producto",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "PostProducto",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/PostProductoRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/pedidos/": {
+      "get": {
+        "summary": "Get Pedidos",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "GetPedidos",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "PedidoId",
+            "in": "path",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "The pedido ID"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "put": {
+        "summary": "Update Estado Pedido",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "UpdateEstadoPedido",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UpdateEstadoPedidoRequest"
+            }
+          },
+          {
+            "name": "PedidoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "The pedido ID"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete Pedido",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "DeletePedido",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "PedidoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "The pedido ID"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/pedidos": {
+      "post": {
+        "summary": "Post Pedidos",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "PostPedidos",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "default": "Bearer {token}",
+            "type": "string"
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/PostPedidosRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "LoginRequest": {
+      "title": "LoginRequest",
+      "example": {
+        "email": "test_correo2@correo.com",
+        "password": "test_pass2"
+      },
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "password"
+      ]
+    },
+    "InsertUserRequest": {
+      "title": "InsertUserRequest",
+      "example": {
+        "nombre": "nombreUser",
+        "usuario": "usuarioUser",
+        "correo": "correoUser",
+        "telefono": "telefonoUser",
+        "direccion": "direccionUser",
+        "contrasena": "claveUser",
+        "rol": "usuario"
+      },
+      "type": "object",
+      "properties": {
+        "nombre": {
+          "type": "string"
+        },
+        "usuario": {
+          "type": "string"
+        },
+        "correo": {
+          "type": "string"
+        },
+        "telefono": {
+          "type": "string"
+        },
+        "direccion": {
+          "type": "string"
+        },
+        "contrasena": {
+          "type": "string"
+        },
+        "rol": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "nombre",
+        "usuario",
+        "correo",
+        "telefono",
+        "direccion",
+        "contrasena",
+        "rol"
+      ]
+    },
+    "PostProductoRequest": {
+      "title": "PostProductoRequest",
+      "example": {
+        "nombre": "ManchesterUnitedShirtAway",
+        "descripcion": "camiseta Manchester United",
+        "precio": 20000,
+        "imagen": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/0852b4e778264c43a517ac3100e68a7a_9366/Camiseta_Prepartido_Manchester_United_Rojo_FR6033_21_model.jpg"
+      },
+      "type": "object",
+      "properties": {
+        "nombre": {
+          "type": "string"
+        },
+        "descripcion": {
+          "type": "string"
+        },
+        "precio": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "imagen": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "nombre",
+        "descripcion",
+        "precio",
+        "imagen"
+      ]
+    },
+    "PutProductoRequest": {
+      "title": "PutProductoRequest",
+      "example": {
+        "nombre": "producto30000",
+        "descripcion": "producto 30000",
+        "precio": 20000,
+        "imagen": ""
+      },
+      "type": "object",
+      "properties": {
+        "nombre": {
+          "type": "string"
+        },
+        "descripcion": {
+          "type": "string"
+        },
+        "precio": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "imagen": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "nombre",
+        "descripcion",
+        "precio",
+        "imagen"
+      ]
+    },
+    "PostPedidosRequest": {
+      "title": "PostPedidosRequest",
+      "example": {
+        "metodoPago": "tarjeta credito",
+        "productos": [
+          {
+            "idProducto": 5,
+            "cantidad": 20
+          },
+          {
+            "idProducto": 4,
+            "cantidad": 20
+          },
+          {
+            "idProducto": 3,
+            "cantidad": 20
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "metodoPago": {
+          "type": "string"
+        },
+        "productos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Producto"
+          }
+        }
+      },
+      "required": [
+        "metodoPago",
+        "productos"
+      ]
+    },
+    "Producto": {
+      "title": "Producto",
+      "example": {
+        "idProducto": 5,
+        "cantidad": 20
+      },
+      "type": "object",
+      "properties": {
+        "idProducto": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "cantidad": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "idProducto",
+        "cantidad"
+      ]
+    },
+    "UpdateEstadoPedidoRequest": {
+      "title": "UpdateEstadoPedidoRequest",
+      "example": {
+        "estado": "confirmado"
+      },
+      "type": "object",
+      "properties": {
+        "estado": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "estado"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "Misc",
+      "description": ""
+    }
+  ]
+}

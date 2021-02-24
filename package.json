@@ -1,0 +1,23 @@
+{
+  "name": "delilah",
+  "version": "1.0.0",
+  "description": "proyect",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "npm run start",
+    "start": "nodemon server.js",
+    "build": "npm run server.js",
+    "start_db": "node .\\database\\initDb.js"
+  },
+  "author": "daniel arias",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
+  }
+}
